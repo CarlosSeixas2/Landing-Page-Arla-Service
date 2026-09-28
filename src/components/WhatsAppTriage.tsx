@@ -46,11 +46,30 @@ export const WhatsAppTriage: React.FC = () => {
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setIsOpen(false);
     };
+    const documentElement = document.documentElement;
+    const previousHtmlOverflow = documentElement.style.overflow;
+    const previousHtmlOverflowX = documentElement.style.overflowX;
+    const previousHtmlOverflowY = documentElement.style.overflowY;
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousBodyOverflowX = document.body.style.overflowX;
+    const previousBodyOverflowY = document.body.style.overflowY;
+
     document.addEventListener("keydown", closeOnEscape);
+    documentElement.style.overflow = "hidden";
+    documentElement.style.overflowX = "hidden";
+    documentElement.style.overflowY = "hidden";
     document.body.style.overflow = "hidden";
+    document.body.style.overflowX = "hidden";
+    document.body.style.overflowY = "hidden";
+
     return () => {
       document.removeEventListener("keydown", closeOnEscape);
-      document.body.style.overflow = "";
+      documentElement.style.overflow = previousHtmlOverflow;
+      documentElement.style.overflowX = previousHtmlOverflowX;
+      documentElement.style.overflowY = previousHtmlOverflowY;
+      document.body.style.overflow = previousBodyOverflow;
+      document.body.style.overflowX = previousBodyOverflowX;
+      document.body.style.overflowY = previousBodyOverflowY;
     };
   }, [isOpen]);
 
@@ -90,7 +109,7 @@ export const WhatsAppTriage: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            className="relative max-h-[92vh] w-full max-w-xl overflow-y-auto rounded-t-[2rem] border border-[#292C31] bg-[#0D1014] p-6 shadow-2xl shadow-black/50 sm:rounded-[2rem] sm:p-8"
+            className="relative max-h-[92vh] w-full min-w-0 max-w-xl overflow-x-hidden overflow-y-auto rounded-t-[2rem] border border-[#292C31] bg-[#0D1014] p-6 shadow-2xl shadow-black/50 sm:rounded-[2rem] sm:p-8"
           >
             <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#1473E6]/20 blur-3xl" />
             <button
