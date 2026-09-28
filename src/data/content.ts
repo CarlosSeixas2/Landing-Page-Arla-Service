@@ -58,7 +58,7 @@ export const SITE_CONFIG = {
   address: "Parnaíba - PI",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Arla+Service%2C+Parna%C3%ADba%2C+PI",
-  whatsappNumber: "5586999999999",
+  whatsappNumber: "558699353299",
   whatsappMessage: "Olá! Gostaria de agendar uma avaliação na ARLA Service.",
   instagramUrl: "https://www.instagram.com/arla_service/",
   instagramHandle: "@arla_service",

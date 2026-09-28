@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Card } from "@heroui/react";
-import { SERVICES_DATA, SITE_CONFIG } from "../data/content";
+import { SERVICES_DATA } from "../data/content";
 import { DynamicIcon } from "./DynamicIcon";
 import { Spotlight } from "./react-bits/Spotlight";
+import { requestWhatsAppTriage } from "./whatsappTriageEvents";
 
 const entranceDirections = [
   { x: -90, y: 24, rotate: -6 },
@@ -16,9 +17,7 @@ const entranceDirections = [
 
 export const Services: React.FC = () => {
   const handleServiceClick = (serviceTitle: string) => {
-    const message = `Olá! Gostaria de saber mais e agendar o serviço de ${serviceTitle} na ARLA Service.`;
-    const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    requestWhatsAppTriage(serviceTitle);
   };
 
   return (

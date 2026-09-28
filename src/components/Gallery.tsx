@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { INSTAGRAM_MEDIA_DATA, SITE_CONFIG } from "../data/content";
 import type { InstagramMediaItem } from "../data/content";
@@ -13,6 +13,17 @@ export const Gallery: React.FC = () => {
     null,
   );
   const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.body.classList.toggle(
+      "media-lightbox-open",
+      Boolean(selectedMedia),
+    );
+
+    return () => {
+      document.body.classList.remove("media-lightbox-open");
+    };
+  }, [selectedMedia]);
 
   const filteredItems = INSTAGRAM_MEDIA_DATA.filter((item) => {
     if (activeFilter === "all") return true;
@@ -191,22 +202,22 @@ export const Gallery: React.FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedMedia(null)}
-            className="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 flex items-start justify-center overflow-x-hidden overflow-y-auto bg-black/85 p-4 backdrop-blur-xl sm:items-center sm:p-6"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#111316] border border-[#292C31] rounded-3xl overflow-hidden max-w-5xl w-full max-h-[92vh] flex flex-col lg:flex-row shadow-2xl"
+              className="my-auto flex w-full min-w-0 max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl border border-[#292C31] bg-[#111316] shadow-2xl sm:max-w-5xl lg:max-h-[92vh] lg:flex-row"
             >
               {/* Modal Media Container */}
-              <div className="relative bg-black w-full lg:w-[42%] lg:max-w-[390px] aspect-[9/16] max-h-[62vh] lg:max-h-[78vh] mx-auto lg:mx-0 shrink-0 overflow-hidden">
+              <div className="relative mx-auto aspect-[9/16] max-h-[62dvh] w-full max-w-full min-w-0 shrink-0 overflow-hidden bg-black lg:mx-0 lg:max-h-[78vh] lg:w-[42%] lg:max-w-[390px]">
                 {selectedMedia.embedUrl ? (
                   <iframe
                     title={selectedMedia.title}
                     src={selectedMedia.embedUrl}
-                    className="w-full h-full border-0"
+                    className="block h-full w-full max-w-full border-0"
                     scrolling="no"
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     allowFullScreen
@@ -237,7 +248,7 @@ export const Gallery: React.FC = () => {
               </div>
 
               {/* Modal Info & Caption */}
-              <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between flex-1 min-w-0">
+              <div className="flex min-w-0 flex-1 flex-col justify-between overflow-hidden p-6 sm:p-8 lg:p-10">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white font-heading mb-3">
                     {selectedMedia.title}

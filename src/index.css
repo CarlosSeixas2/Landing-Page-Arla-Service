@@ -39,6 +39,11 @@
     font-family: var(--font-sans);
   }
 
+  body.media-lightbox-open header {
+    pointer-events: none;
+    visibility: hidden;
+  }
+
   h1,
   h2,
   h3,

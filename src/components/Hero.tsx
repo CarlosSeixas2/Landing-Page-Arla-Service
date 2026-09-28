@@ -3,14 +3,12 @@ import { motion } from "framer-motion";
 import { Button } from "@heroui/react";
 import { DynamicIcon } from "./DynamicIcon";
 import { SITE_CONFIG } from "../data/content";
+import { requestWhatsAppTriage } from "./whatsappTriageEvents";
 import profileImage from "../assets/foto_perfil.jpg";
 
 export const Hero: React.FC = () => {
   const handleWhatsApp = () => {
-    const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-      SITE_CONFIG.whatsappMessage,
-    )}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    requestWhatsAppTriage();
   };
 
   const containerVariants = {

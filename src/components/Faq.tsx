@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FAQ_DATA, SITE_CONFIG } from "../data/content";
+import { FAQ_DATA } from "../data/content";
 import { DynamicIcon } from "./DynamicIcon";
+import { requestWhatsAppTriage } from "./whatsappTriageEvents";
 
 export const Faq: React.FC = () => {
   const [openIds, setOpenIds] = useState<string[]>(["faq-1"]);
@@ -17,10 +18,7 @@ export const Faq: React.FC = () => {
   const rightFaqs = FAQ_DATA.slice(half);
 
   const handleWhatsApp = () => {
-    const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-      "Olá! Tenho uma dúvida sobre os serviços da ARLA Service.",
-    )}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    requestWhatsAppTriage();
   };
 
   const renderFaqColumn = (faqs: typeof FAQ_DATA) => (

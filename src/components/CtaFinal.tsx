@@ -1,15 +1,12 @@
 import React from "react";
 import { Button } from "@heroui/react";
-import { SITE_CONFIG } from "../data/content";
 import { DynamicIcon } from "./DynamicIcon";
 import { Spotlight } from "./react-bits/Spotlight";
+import { requestWhatsAppTriage } from "./whatsappTriageEvents";
 
 export const CtaFinal: React.FC = () => {
   const handleWhatsApp = () => {
-    const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-      SITE_CONFIG.whatsappMessage,
-    )}`;
-    window.open(url, "_blank", "noopener,noreferrer");
+    requestWhatsAppTriage();
   };
 
   return (

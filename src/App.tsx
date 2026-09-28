@@ -11,6 +11,7 @@ import { Location } from "./components/Location";
 import { CtaFinal } from "./components/CtaFinal";
 import { Footer } from "./components/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { WhatsAppTriage } from "./components/WhatsAppTriage";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
 
       {/* Persistent Floating WhatsApp Action */}
       <WhatsAppButton />
+      <WhatsAppTriage />
     </div>
   );
 }

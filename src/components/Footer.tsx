@@ -1,25 +1,23 @@
-import React from 'react';
-import { Logo } from './Logo';
-import { SITE_CONFIG } from '../data/content';
-import { DynamicIcon } from './DynamicIcon';
+import React from "react";
+import { Logo } from "./Logo";
+import { SITE_CONFIG } from "../data/content";
+import { DynamicIcon } from "./DynamicIcon";
+import { requestWhatsAppTriage } from "./whatsappTriageEvents";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { name: 'Serviços', href: '#servicos' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Estrutura', href: '#estrutura' },
-    { name: 'Depoimentos', href: '#depoimentos' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contato', href: '#localizacao' },
+    { name: "Serviços", href: "#servicos" },
+    { name: "Sobre", href: "#sobre" },
+    { name: "Estrutura", href: "#estrutura" },
+    { name: "Depoimentos", href: "#depoimentos" },
+    { name: "FAQ", href: "#faq" },
+    { name: "Contato", href: "#localizacao" },
   ];
 
   const handleWhatsApp = () => {
-    const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-      SITE_CONFIG.whatsappMessage
-    )}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    requestWhatsAppTriage();
   };
 
   return (
@@ -50,7 +48,11 @@ export const Footer: React.FC = () => {
           {/* Socials & Location */}
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2 text-xs text-[#A7A9AD]">
-              <DynamicIcon name="Location01Icon" size={16} className="text-[#1473E6]" />
+              <DynamicIcon
+                name="Location01Icon"
+                size={16}
+                className="text-[#1473E6]"
+              />
               <span>{SITE_CONFIG.city}</span>
             </div>
 

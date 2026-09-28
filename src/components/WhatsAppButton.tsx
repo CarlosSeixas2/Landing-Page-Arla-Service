@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { SITE_CONFIG } from '../data/content';
-import { DynamicIcon } from './DynamicIcon';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { DynamicIcon } from "./DynamicIcon";
+import { requestWhatsAppTriage } from "./whatsappTriageEvents";
 
 export const WhatsAppButton: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   const handleClick = () => {
-    const url = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-      SITE_CONFIG.whatsappMessage
-    )}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    requestWhatsAppTriage();
   };
 
   return (
@@ -40,13 +37,13 @@ export const WhatsAppButton: React.FC = () => {
         animate={{ scale: 1, opacity: 1 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.92 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
         className="relative w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl shadow-[#25D366]/40 flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
         aria-label="Abrir conversa no WhatsApp"
       >
         {/* Pulsing Aura */}
         <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
-        
+
         {/* Icon */}
         <DynamicIcon name="WhatsappIcon" size={30} color="#FFFFFF" />
       </motion.button>
