@@ -43,17 +43,6 @@ export const Differentials: React.FC = () => {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#090A0C] via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#1473E6] animate-pulse" />
-                  <span className="text-xs font-semibold text-white tracking-wider uppercase">
-                    Padrão ARLA de Precisão
-                  </span>
-                </div>
-                <span className="text-xs text-[#A7A9AD]">
-                  100% Transparente
-                </span>
-              </div>
             </div>
           </motion.div>
 
