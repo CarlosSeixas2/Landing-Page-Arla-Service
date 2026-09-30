@@ -123,9 +123,6 @@ export const Gallery: React.FC = () => {
                     item={item}
                     index={index}
                     onSelect={() => setSelectedMedia(item)}
-                    onOpenInstagram={(e) =>
-                      handleOpenInstagram(e, item.postUrl)
-                    }
                   />
                 ))}
               </div>

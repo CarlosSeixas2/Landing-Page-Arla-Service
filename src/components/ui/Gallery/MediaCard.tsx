@@ -7,14 +7,12 @@ export interface MediaCardProps {
   item: InstagramMediaItem;
   index: number;
   onSelect: () => void;
-  onOpenInstagram: (e: React.MouseEvent) => void;
 }
 
 export const MediaCard: React.FC<MediaCardProps> = ({
   item,
   index,
   onSelect,
-  onOpenInstagram,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
