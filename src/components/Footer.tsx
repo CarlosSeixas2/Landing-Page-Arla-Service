@@ -2,7 +2,7 @@ import React from "react";
 import { Logo } from "./Logo";
 import { SITE_CONFIG } from "../data/content";
 import { DynamicIcon } from "./DynamicIcon";
-import { requestWhatsAppTriage } from "./whatsappTriageEvents";
+import { requestWhatsAppTriage } from "../lib/whatsappTriageEvents";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <Logo size="md" />
             <span className="text-xs text-[#A7A9AD] mt-2 font-medium tracking-wide">
-              Oficina mecânica especializada
+              Oficina especializada em linha diesel • Euro 5 & Euro 6
             </span>
           </div>
 

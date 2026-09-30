@@ -26,6 +26,7 @@ export interface StepItem {
   number: string;
   title: string;
   description: string;
+  iconName: string;
 }
 
 export interface TestimonialItem {
@@ -53,101 +54,111 @@ export interface GalleryItem {
 
 export const SITE_CONFIG = {
   name: "ARLA Service",
-  tagline: "Oficina Mecânica Automotiva de Alta Precisão",
+  tagline: "Oficina Especializada em Linha Diesel, Euro 5/6, Pick-Ups e Caminhões",
   city: "Parnaíba - PI",
   address: "Parnaíba - PI",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Arla+Service%2C+Parna%C3%ADba%2C+PI",
   whatsappNumber: "558699353299",
-  whatsappMessage: "Olá! Gostaria de agendar uma avaliação na ARLA Service.",
+  whatsappMessage: "Olá! Gostaria de agendar uma avaliação técnica na ARLA Service.",
   instagramUrl: "https://www.instagram.com/arla_service/",
   instagramHandle: "@arla_service",
   phone: "Confira os canais oficiais",
   stats: {
     satisfiedClients: "+500",
-    experienceYears: "Atendimento local",
-    satisfactionRate: "Serviços automotivos",
+    experienceYears: "Atendimento técnico local",
+    satisfactionRate: "Especialistas em Linha Diesel",
   },
 };
+
+export const DIESEL_SPECIALTIES = [
+  { id: "euro5", label: "Euro 5", desc: "Injeção e Emissões", iconName: "ShieldCheckIcon" },
+  { id: "euro6", label: "Euro 6", desc: "Pós-tratamento & SCR", iconName: "CpuIcon" },
+  { id: "pickups", label: "Pick-Ups", desc: "Linha Diesel Leve", iconName: "Car01Icon" },
+  { id: "caminhoes", label: "Caminhões", desc: "Linha Diesel Pesada", iconName: "DumpTruckIcon" },
+  { id: "diesel-leve", label: "Diesel Leve", desc: "Utilitários & Vans", iconName: "GarbageTruckIcon" },
+  { id: "diesel-pesado", label: "Diesel Pesado", desc: "Cavalos & Frotas", iconName: "Award01Icon" },
+  { id: "maquinas", label: "Máquinas", desc: "Equipamentos a Diesel", iconName: "FlashIcon" },
+];
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "preventive",
-    title: "Manutenção preventiva",
+    title: "Manutenção Preventiva e Corretiva",
     description:
-      "Revisões e cuidados programados para manter o veículo sempre em perfeitas condições de uso.",
+      "Revisões programadas, troca técnica de fluidos, filtros de combustível/óleo e checagem completa para evitar paradas inesperadas da sua operação.",
     iconName: "Wrench01Icon",
-    tag: "Essencial",
+    tag: "Linha Diesel",
   },
   {
     id: "diagnostic",
-    title: "Diagnóstico automotivo",
+    title: "Diagnóstico Avançado",
     description:
-      "Identificação computadorizada de falhas e avaliação técnica completa do veículo.",
+      "Varredura computadorizada com scanners dedicados para linha diesel. Leitura precisa de parâmetros de injeção, sensores e falhas em tempo real.",
     iconName: "CpuIcon",
-    tag: "Scanner 3D",
+    tag: "Scanner Dedicado",
   },
   {
     id: "mechanics",
-    title: "Mecânica geral",
+    title: "Reparação Mecânica de Motores",
     description:
-      "Serviços mecânicos completos de motor, transmissão e componentes para diferentes necessidades.",
-    iconName: "Car01Icon",
-    tag: "Completo",
-  },
-  {
-    id: "inspection",
-    title: "Revisão",
-    description:
-      "Avaliação minuciosa de todos os principais itens de segurança e desempenho do veículo.",
-    iconName: "ShieldCheckIcon",
-    tag: "Checklist",
-  },
-  {
-    id: "brakes-suspension",
-    title: "Suspensão e freios",
-    description:
-      "Manutenção dos componentes vitais responsáveis por estabilidade, frenagem e segurança.",
+      "Desmontagem, ajuste e reparo técnico de motores diesel, cabeçotes, turbinas, bombas de alta pressão e componentes mecânicos de alta exigência.",
     iconName: "Target01Icon",
-    tag: "Segurança",
+    tag: "Alta Precisão",
   },
   {
-    id: "electrical",
-    title: "Sistema elétrico",
+    id: "euro-systems",
+    title: "Sistemas Euro 5 e Euro 6",
     description:
-      "Diagnóstico e manutenção de baterias, alternadores, chicotes e componentes elétricos.",
+      "Diagnóstico e manutenção técnica em sistemas de controle de emissões, catalisadores SCR, filtros de partículas (DPF) e dosagem de ARLA 32.",
+    iconName: "ShieldCheckIcon",
+    tag: "Euro 5 & Euro 6",
+  },
+  {
+    id: "pickups-light",
+    title: "Pick-Ups e Linha Diesel Leve",
+    description:
+      "Atendimento especializado para caminhonetes e utilitários diesel: suspensão reforçada, freios, transmissão, tração 4x4 e motorização.",
+    iconName: "Car01Icon",
+    tag: "Pick-Ups & Vans",
+  },
+  {
+    id: "heavy-trucks",
+    title: "Caminhões, Linha Pesada e Máquinas",
+    description:
+      "Suporte mecânico e elétrico estruturado para caminhões, cavalos mecânicos e equipamentos pesados a diesel, garantindo máxima disponibilidade.",
     iconName: "FlashIcon",
-    tag: "Precisão",
+    tag: "Pesados & Máquinas",
   },
 ];
 
 export const DIFFERENTIALS_DATA: DifferentialItem[] = [
   {
     number: "01",
-    title: "Experiência",
+    title: "Especialização Técnica em Diesel",
     description:
-      "Anos de atuação no mercado automotivo e profundo conhecimento técnico no que fazemos.",
+      "Equipe focada na engenharia e particularidades dos motores diesel, desde utilitários leves até caminhões pesados e máquinas.",
     iconName: "Award01Icon",
   },
   {
     number: "02",
-    title: "Atendimento próximo",
+    title: "Diagnóstico Eletrônico Avançado",
     description:
-      "Você fala diretamente com quem entende do assunto e que realmente se importa com seu carro.",
-    iconName: "CustomerSupportIcon",
+      "Scanners dedicados para linha diesel para identificar a causa raiz do problema com rapidez, exatidão e sem tentativas desnecessárias.",
+    iconName: "CpuIcon",
   },
   {
     number: "03",
-    title: "Diagnóstico preciso",
+    title: "Domínio dos Padrões Euro 5 e Euro 6",
     description:
-      "Tecnologia de ponta e profissionais qualificados para identificar o problema certo sem enrolação.",
-    iconName: "Target01Icon",
+      "Conhecimento técnico aprofundado nos sistemas modernos de injeção eletrônica common rail, ARLA 32, DPF e pós-tratamento.",
+    iconName: "ShieldCheckIcon",
   },
   {
     number: "04",
-    title: "Serviço de qualidade",
+    title: "Transparência e Confiabilidade",
     description:
-      "Trabalhamos exclusivamente com peças de primeira linha e total compromisso com o seu veículo.",
+      "Orçamento claro antes da execução, uso de peças com procedência e garantia formal de peças e serviços prestados.",
     iconName: "CheckmarkBadge01Icon",
   },
 ];
@@ -155,105 +166,110 @@ export const DIFFERENTIALS_DATA: DifferentialItem[] = [
 export const HOW_WE_WORK_DATA: StepItem[] = [
   {
     number: "01",
-    title: "Agendamento",
+    title: "Contato e Triagem",
     description:
-      "Contato rápido via WhatsApp para escolher o melhor horário para você.",
+      "Atendimento direto via WhatsApp para entender os sintomas e necessidades do seu veículo diesel.",
+    iconName: "Clock01Icon",
   },
   {
     number: "02",
-    title: "Avaliação",
+    title: "Recepção e Avaliação",
     description:
-      "Recepção do veículo com inspeção visual detalhada e checklist de entrada.",
+      "Inspeção visual detalhada e checklist de entrada com foco nos sistemas mecânicos e elétricos.",
+    iconName: "ShieldCheckIcon",
   },
   {
     number: "03",
-    title: "Diagnóstico",
+    title: "Diagnóstico Avançado",
     description:
-      "Varredura computadorizada e emissão de orçamento transparente e claro.",
+      "Varredura computadorizada com scanner diesel e apresentação de orçamento transparente.",
+    iconName: "CpuIcon",
   },
   {
     number: "04",
-    title: "Execução",
+    title: "Execução Técnica",
     description:
-      "Mecânicos especializados realizam o serviço com ferramentas de alta precisão.",
+      "Reparação e manutenção realizadas com ferramentas de precisão e peças de alto padrão.",
+    iconName: "Wrench01Icon",
   },
   {
     number: "05",
-    title: "Entrega",
+    title: "Validação e Entrega",
     description:
-      "Teste de rodagem e garantia assegurada na entrega das chaves.",
+      "Testes de funcionamento e entrega com garantia formal de serviço e peças aplicadas.",
+    iconName: "CheckmarkBadge01Icon",
   },
 ];
 
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
     id: "1",
-    name: "João Silva",
-    role: "Cliente",
+    name: "Carlos Mendes",
+    role: "Proprietário de Pick-Up Diesel",
     comment:
-      "Excelente atendimento e serviço! Pessoal muito competente e atencioso. Meu carro ficou muito bom e pronto no prazo.",
+      "Excelente atendimento técnico. Identificaram rapidamente uma falha de injeção na minha pick-up que outras oficinas não resolveram. Serviço preciso e transparente.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=80",
   },
   {
     id: "2",
-    name: "Maria Oliveira",
-    role: "Cliente",
+    name: "Marcos Ribeiro",
+    role: "Gestor de Frota / Transporte",
     comment:
-      "Serviço rápido e muito bem feito. Já sou cliente de anos e sempre sou bem atendida com total transparência.",
-    rating: 5,
-    avatar:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80",
-  },
-  {
-    id: "3",
-    name: "Rafael Souza",
-    role: "Cliente",
-    comment:
-      "Profissionais qualificados e preços justos. Diagnosticaram um barulho que nenhuma outra oficina encontrou. Recomendo de olhos fechados!",
+      "Atendimento ágil e diagnóstico preciso nos caminhões da nossa empresa. Reduziram o tempo de parada da nossa frota com total profissionalismo.",
     rating: 5,
     avatar:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80",
+  },
+  {
+    id: "3",
+    name: "Antônio Ferreira",
+    role: "Motorista Autônomo",
+    comment:
+      "Oficina com estrutura de ponta e especialistas de verdade em sistemas Euro 5 e Euro 6. Honestidade no orçamento e entrega rigorosamente no prazo.",
+    rating: 5,
+    avatar:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80",
   },
 ];
 
 export const FAQ_DATA: FaqItem[] = [
   {
     id: "faq-1",
-    question: "Quais veículos vocês atendem?",
+    question: "Quais tipos de veículos e equipamentos a ARLA Service atende?",
     answer:
-      "Atendemos veículos nacionais e importados de todas as principais montadoras, incluindo carros de passeio, SUVs, utilitários e caminhonetes leves, tanto modelos a combustão quanto híbridos.",
+      "Atendemos toda a linha diesel: pick-ups, caminhonetes, utilitários leves, caminhões de pequeno, médio e grande porte, cavalos mecânicos e máquinas a diesel.",
   },
   {
     id: "faq-2",
-    question: "É necessário agendar o serviço?",
+    question: "Vocês atendem veículos com tecnologia Euro 5 e Euro 6?",
     answer:
-      "Recomendamos fortemente o agendamento prévio para garantir que nossa equipe e elevadores estejam disponíveis para atendê-lo sem espera. No entanto, também atendemos emergências conforme disponibilidade.",
+      "Sim. Possuímos capacitação e equipamentos específicos para diagnóstico e manutenção de sistemas Euro 5 e Euro 6, incluindo injeção eletrônica common rail, sistema de dosagem de ARLA 32, catalisadores SCR e filtros de partículas (DPF).",
   },
   {
     id: "faq-3",
-    question: "Posso solicitar orçamento pelo WhatsApp?",
+    question: "Como funciona o diagnóstico eletrônico avançado?",
     answer:
-      "Sim! Você pode nos enviar uma mensagem detalhando a necessidade do veículo. Para serviços que exigem diagnóstico detalhado, combinamos uma avaliação presencial rápida e sem compromisso.",
+      "Utilizamos scanners industriais e automotivos dedicados para linha diesel. O equipamento se comunica diretamente com a central eletrônica (ECU) para identificar falhas intermitentes, parâmetros de injeção, sensores e atuadores com extrema precisão.",
   },
   {
     id: "faq-4",
-    question: "Quanto tempo demora o serviço?",
+    question: "É necessário agendar antes de levar o veículo ou caminhão?",
     answer:
-      "O tempo varia de acordo com o serviço. Manutenções preventivas e trocas de óleo costumam levar de 1 a 2 horas, enquanto intervenções mais complexas são combinadas previamente com cronograma transparente.",
+      "Recomendamos o agendamento prévio via WhatsApp para organizarmos o box de atendimento e diminuirmos o tempo de parada do seu veículo. Em situações de urgência técnica, atendemos conforme a disponibilidade imediata da oficina.",
   },
   {
     id: "faq-5",
-    question: "Onde fica a oficina?",
+    question: "Vocês atendem frotas comerciais e empresas de transporte?",
     answer:
-      "Estamos localizados em ponto de fácil acesso em Parnaíba - PI, com estacionamento amplo e ambiente preparado com sala de espera confortável.",
+      "Sim. Oferecemos suporte técnico para empresas, transportadoras e frotistas, com atendimento estruturado em manutenção preventiva e corretiva para manter a disponibilidade dos veículos.",
   },
   {
     id: "faq-6",
-    question: "Quais formas de pagamento são aceitas?",
+    question: "Quais formas de pagamento são aceitas e como funciona a garantia?",
     answer:
-      "Aceitamos cartões de crédito (com opção de parcelamento), débito, PIX e dinheiro. Emitimos nota fiscal e certificado de garantia para todos os serviços realizados.",
+      "Aceitamos cartões de crédito (com parcelamento), débito, PIX e opções de faturamento para pessoas jurídicas sob consulta prévia. Todos os serviços contam com emissão de nota fiscal e termo de garantia.",
   },
 ];
 

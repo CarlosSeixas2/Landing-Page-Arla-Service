@@ -33,6 +33,17 @@
     overflow-x: hidden;
   }
 
+  html,
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -52,6 +63,37 @@
   h6 {
     font-family: var(--font-heading);
     letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .video-progress::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    appearance: none;
+    border: 2px solid #2589ff;
+    border-radius: 9999px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 45%);
+  }
+
+  .video-progress::-moz-range-thumb {
+    width: 9px;
+    height: 9px;
+    border: 2px solid #2589ff;
+    border-radius: 9999px;
+    background: #fff;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 45%);
+  }
+
+  /* Ocultar scrollbar para Chrome, Safari e Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Ocultar scrollbar para IE, Edge e Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE e Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 

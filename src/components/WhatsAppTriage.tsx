@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SITE_CONFIG } from "../data/content";
 import { DynamicIcon } from "./DynamicIcon";
-import { WHATSAPP_TRIAGE_EVENT } from "./whatsappTriageEvents";
+import { WHATSAPP_TRIAGE_EVENT } from "../lib/whatsappTriageEvents";
 
 interface TriageDetail {
   service?: string;
 }
 
 const reasons = [
-  { label: "Revisão / manutenção", icon: "Wrench01Icon" },
-  { label: "Luz acesa no painel", icon: "FlashIcon" },
-  { label: "Carro não está funcionando", icon: "Car01Icon" },
-  { label: "Orçamento ou dúvida", icon: "CustomerSupportIcon" },
+  { label: "Manutenção preventiva / revisão", icon: "Wrench01Icon" },
+  { label: "Diagnóstico eletrônico / Scanner", icon: "CpuIcon" },
+  { label: "Falha mecânica / Injeção diesel", icon: "FlashIcon" },
+  { label: "Sistema Euro 5 / Euro 6 / ARLA 32", icon: "ShieldCheckIcon" },
+  { label: "Pick-Up, Caminhão ou Máquina", icon: "Car01Icon" },
+  { label: "Orçamento para Frota / Empresa", icon: "CustomerSupportIcon" },
 ];
 
 const urgencyOptions = [
@@ -114,9 +116,9 @@ export const WhatsAppTriage: React.FC = () => {
             <div className="absolute -right-16 -top-16 h-44 w-44 rounded-full bg-[#1473E6]/20 blur-3xl" />
             <button
               type="button"
-              onClick={() => setIsOpen(false)}
-              className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-[#292C31] bg-[#181B1F] text-[#A7A9AD] transition hover:border-white hover:text-white"
+              className="absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#292C31] bg-[#181B1F] text-[#A7A9AD] transition hover:border-white hover:text-white cursor-pointer"
               aria-label="Fechar triagem"
+              onClick={() => setIsOpen(false)}
             >
               <DynamicIcon name="Cancel01Icon" size={18} />
             </button>
@@ -124,17 +126,17 @@ export const WhatsAppTriage: React.FC = () => {
             <div className="relative mb-7 pr-10">
               <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-[#2589FF]">
                 <DynamicIcon name="CustomerSupportIcon" size={16} />
-                Atendimento rápido
+                Atendimento Técnico Especializado
               </span>
               <h2
                 id="triage-title"
                 className="font-heading text-2xl font-extrabold text-white sm:text-3xl"
               >
-                Como podemos ajudar?
+                Como podemos ajudar seu veículo?
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-[#A7A9AD]">
-                Escolha algumas opções e chegamos ao WhatsApp com o contexto
-                certo.
+                Selecione as informações abaixo para direcionarmos seu
+                atendimento ao especialista certo na ARLA Service.
               </p>
               {service && (
                 <span className="mt-3 inline-flex items-center gap-2 rounded-lg border border-[#1473E6]/30 bg-[#1473E6]/10 px-3 py-2 text-xs font-semibold text-[#A7A9AD]">
@@ -202,7 +204,7 @@ export const WhatsAppTriage: React.FC = () => {
                   onChange={(event) => setDescription(event.target.value)}
                   rows={3}
                   maxLength={280}
-                  placeholder="Ex.: começou a fazer um barulho ao frear..."
+                  placeholder="Ex.: Pick-up/caminhão com perda de potência ou luz da injeção / ARLA 32 acesa..."
                   className="w-full resize-none rounded-xl border border-[#292C31] bg-[#111316] px-4 py-3 text-sm text-white outline-none transition placeholder:text-[#6B7280] focus:border-[#1473E6] focus:ring-2 focus:ring-[#1473E6]/20"
                 />
                 <span className="mt-1 block text-right text-xs text-[#6B7280]">

@@ -1,6 +1,12 @@
 import React from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
+  DumpTruckIcon,
+  GarbageTruckIcon,
+  SemiTruckIcon,
+  TruckIcon,
+  DeliveryTruck01Icon,
+  ContainerTruck01Icon,
   Wrench01Icon,
   Wrench02Icon,
   ToolsIcon,
@@ -36,6 +42,12 @@ import {
 } from "@hugeicons/core-free-icons";
 
 const ICON_MAP: Record<string, any> = {
+  DumpTruckIcon,
+  GarbageTruckIcon,
+  SemiTruckIcon,
+  TruckIcon,
+  DeliveryTruck01Icon,
+  ContainerTruck01Icon,
   Wrench01Icon,
   Wrench02Icon,
   ToolsIcon,

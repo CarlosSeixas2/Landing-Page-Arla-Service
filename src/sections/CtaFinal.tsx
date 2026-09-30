@@ -1,8 +1,10 @@
 import React from "react";
 import { Button } from "@heroui/react";
-import { DynamicIcon } from "./DynamicIcon";
-import { Spotlight } from "./react-bits/Spotlight";
-import { requestWhatsAppTriage } from "./whatsappTriageEvents";
+import { Container } from "../components/ui/Container";
+import { DynamicIcon } from "../components/DynamicIcon";
+import { Spotlight } from "../components/ui/react-bits/Spotlight";
+import { requestWhatsAppTriage } from "../lib/whatsappTriageEvents";
+import ctaBg from "../assets/volvo-ilustrativa.jpg";
 
 export const CtaFinal: React.FC = () => {
   const handleWhatsApp = () => {
@@ -11,15 +13,14 @@ export const CtaFinal: React.FC = () => {
 
   return (
     <section className="py-20 sm:py-28 bg-[#090A0C] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container className="relative z-10">
         <Spotlight className="rounded-3xl border border-[#292C31] shadow-2xl">
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B1A2B] via-[#111316] to-[#090A0C] border border-[#1473E6]/30 p-8 sm:p-12 lg:p-16">
-            {/* Background Automotive Visual & Light Effects */}
             <div className="absolute inset-0 z-0">
               <img
-                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80"
-                alt="Automotive background"
-                className="w-full h-full object-cover object-center opacity-15 filter brightness-75"
+                src={ctaBg}
+                alt="Caminhão Volvo e Oficina Diesel ARLA Service"
+                className="w-full h-full object-cover object-[center_60%] filter brightness-75 contrast-125"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#090A0C] via-[#090A0C]/90 to-transparent" />
@@ -30,16 +31,17 @@ export const CtaFinal: React.FC = () => {
               {/* Text side */}
               <div className="lg:col-span-8 text-left">
                 <span className="text-[#2589FF] text-xs sm:text-sm font-bold uppercase tracking-widest block mb-3 font-sans">
-                  PRECISA DE UM SERVIÇO AUTOMOTIVO?
+                  ESPECIALISTAS EM LINHA DIESEL
                 </span>
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-heading tracking-tight leading-[1.12] mb-4">
-                  Seu carro precisa de atenção?
+                  Seu veículo ou frota precisa de manutenção?
                 </h2>
 
                 <p className="text-[#A7A9AD] text-base sm:text-lg max-w-xl">
-                  Fale com nossa equipe e agende seu atendimento com comodidade,
-                  transparência e rapidez.
+                  Fale com nossos especialistas pelo WhatsApp. Diagnóstico
+                  avançado, precisão técnica e a agilidade que sua operação a
+                  diesel necessita.
                 </p>
               </div>
 
@@ -61,7 +63,7 @@ export const CtaFinal: React.FC = () => {
             </div>
           </div>
         </Spotlight>
-      </div>
+      </Container>
     </section>
   );
 };

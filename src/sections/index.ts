@@ -1,0 +1,10 @@
+export { About } from "./About";
+export { CtaFinal } from "./CtaFinal";
+export { Differentials } from "./Differentials";
+export { Faq } from "./Faq";
+export { Gallery } from "./Gallery";
+export { Hero } from "./Hero";
+export { HowWeWork } from "./HowWeWork";
+export { Location } from "./Location";
+export { Services } from "./Services";
+export { Testimonials } from "./Testimonials";

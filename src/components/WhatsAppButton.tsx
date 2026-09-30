@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { DynamicIcon } from "./DynamicIcon";
-import { requestWhatsAppTriage } from "./whatsappTriageEvents";
+import { requestWhatsAppTriage } from "../lib/whatsappTriageEvents";
 
 export const WhatsAppButton: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(false);

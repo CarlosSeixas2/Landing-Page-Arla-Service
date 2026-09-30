@@ -1,10 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@heroui/react";
+import {
+  Map as MapLibreMap,
+  Marker,
+  NavigationControl,
+  setWorkerUrl,
+} from "maplibre-gl";
+import maplibreWorkerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { Container } from "../components/ui/Container";
+import { DynamicIcon } from "../components/DynamicIcon";
 import { SITE_CONFIG } from "../data/content";
-import { DynamicIcon } from "./DynamicIcon";
+
+setWorkerUrl(maplibreWorkerUrl);
 
 export const Location: React.FC = () => {
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!mapContainerRef.current) return;
+
+    const map = new MapLibreMap({
+      container: mapContainerRef.current,
+      style: "https://tiles.openfreemap.org/styles/bright",
+      center: [-41.776, -2.904],
+      zoom: 16,
+    });
+
+    map.addControl(new NavigationControl({ showCompass: false }), "top-right");
+    new Marker({ color: "#1473E6" }).setLngLat([-41.776, -2.904]).addTo(map);
+
+    return () => map.remove();
+  }, []);
+
   const handleOpenMaps = () => {
     window.open(SITE_CONFIG.googleMapsUrl, "_blank", "noopener,noreferrer");
   };
@@ -14,9 +43,8 @@ export const Location: React.FC = () => {
       id="localizacao"
       className="py-24 sm:py-32 bg-[#090A0C] relative overflow-hidden border-t border-[#292C31]/40"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Address Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +91,6 @@ export const Location: React.FC = () => {
               </div>
             </div>
 
-            {/* Google Maps Button */}
             <Button
               onPress={handleOpenMaps}
               className="bg-[#1473E6] hover:bg-[#2589FF] text-white font-bold text-base px-8 py-3.5 rounded-full shadow-lg shadow-[#1473E6]/25 transition-all duration-300 hover:shadow-[#1473E6]/40 hover:scale-[1.02] flex items-center gap-2.5 cursor-pointer border-none"
@@ -73,7 +100,6 @@ export const Location: React.FC = () => {
             </Button>
           </motion.div>
 
-          {/* Right Column: Interactive Styled Map Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -81,24 +107,17 @@ export const Location: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="lg:col-span-7"
           >
-            <div
-              onClick={handleOpenMaps}
-              className="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#292C31] hover:border-[#1473E6]/70 bg-[#111316] h-[340px] sm:h-[400px] cursor-pointer shadow-2xl transition-all duration-300"
-            >
-              <iframe
-                title="Mapa da região da ARLA Service em Parnaíba"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-41.82%2C-2.94%2C-41.73%2C-2.86&layer=mapnik&marker=-2.904%2C-41.776"
-                className="w-full h-full border-0"
-                loading="lazy"
+            <div className="group relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#292C31] hover:border-[#1473E6]/70 bg-[#111316] h-[340px] sm:h-[400px] shadow-2xl transition-all duration-300">
+              <div
+                ref={mapContainerRef}
+                role="application"
+                aria-label="Mapa interativo da região da ARLA Service em Parnaíba"
+                className="w-full h-full"
               />
-
-              <div className="absolute bottom-3 left-3 bg-white/95 px-3 py-1.5 rounded-md text-[10px] font-semibold text-slate-700 shadow-md">
-                © OpenStreetMap contributors
-              </div>
             </div>
           </motion.div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
