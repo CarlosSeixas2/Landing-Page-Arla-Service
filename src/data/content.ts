@@ -54,13 +54,15 @@ export interface GalleryItem {
 
 export const SITE_CONFIG = {
   name: "ARLA Service",
-  tagline: "Oficina Especializada em Linha Diesel, Euro 5/6, Pick-Ups e Caminhões",
+  tagline:
+    "Oficina Especializada em Linha Diesel, Euro 5/6, Pick-Ups e Caminhões",
   city: "Parnaíba - PI",
   address: "Parnaíba - PI",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Arla+Service%2C+Parna%C3%ADba%2C+PI",
   whatsappNumber: "558699353299",
-  whatsappMessage: "Olá! Gostaria de agendar uma avaliação técnica na ARLA Service.",
+  whatsappMessage:
+    "Olá! Gostaria de agendar uma avaliação técnica na ARLA Service.",
   instagramUrl: "https://www.instagram.com/arla_service/",
   instagramHandle: "@arla_service",
   phone: "Confira os canais oficiais",
@@ -72,13 +74,42 @@ export const SITE_CONFIG = {
 };
 
 export const DIESEL_SPECIALTIES = [
-  { id: "euro5", label: "Euro 5", desc: "Injeção e Emissões", iconName: "ShieldCheckIcon" },
-  { id: "euro6", label: "Euro 6", desc: "Pós-tratamento & SCR", iconName: "CpuIcon" },
-  { id: "pickups", label: "Pick-Ups", desc: "Linha Diesel Leve", iconName: "Car01Icon" },
-  { id: "caminhoes", label: "Caminhões", desc: "Linha Diesel Pesada", iconName: "DumpTruckIcon" },
-  { id: "diesel-leve", label: "Diesel Leve", desc: "Utilitários & Vans", iconName: "GarbageTruckIcon" },
-  { id: "diesel-pesado", label: "Diesel Pesado", desc: "Cavalos & Frotas", iconName: "Award01Icon" },
-  { id: "maquinas", label: "Máquinas", desc: "Equipamentos a Diesel", iconName: "FlashIcon" },
+  {
+    id: "euro5",
+    label: "Euro 5",
+    desc: "Injeção e Emissões",
+    iconName: "ShieldCheckIcon",
+  },
+  {
+    id: "euro6",
+    label: "Euro 6",
+    desc: "Pós-tratamento & SCR",
+    iconName: "CpuIcon",
+  },
+  {
+    id: "pickups",
+    label: "Pick-Ups",
+    desc: "Linha Diesel Leve",
+    iconName: "Car01Icon",
+  },
+  {
+    id: "caminhoes",
+    label: "Caminhões",
+    desc: "Linha Diesel Pesada",
+    iconName: "DumpTruckIcon",
+  },
+  {
+    id: "diesel-leve",
+    label: "Diesel Leve",
+    desc: "Utilitários & Vans",
+    iconName: "GarbageTruckIcon",
+  },
+  {
+    id: "diesel-pesado",
+    label: "Diesel Pesado",
+    desc: "Cavalos & Frotas",
+    iconName: "SemiTruckIcon",
+  },
 ];
 
 export const SERVICES_DATA: ServiceItem[] = [
@@ -103,7 +134,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Reparação Mecânica de Motores",
     description:
       "Desmontagem, ajuste e reparo técnico de motores diesel, cabeçotes, turbinas, bombas de alta pressão e componentes mecânicos de alta exigência.",
-    iconName: "Target01Icon",
+    iconName: "ToolsIcon",
     tag: "Alta Precisão",
   },
   {
@@ -111,7 +142,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Sistemas Euro 5 e Euro 6",
     description:
       "Diagnóstico e manutenção técnica em sistemas de controle de emissões, catalisadores SCR, filtros de partículas (DPF) e dosagem de ARLA 32.",
-    iconName: "ShieldCheckIcon",
+    iconName: "DeliveryTruck02Icon",
     tag: "Euro 5 & Euro 6",
   },
   {
@@ -127,7 +158,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     title: "Caminhões, Linha Pesada e Máquinas",
     description:
       "Suporte mecânico e elétrico estruturado para caminhões, cavalos mecânicos e equipamentos pesados a diesel, garantindo máxima disponibilidade.",
-    iconName: "FlashIcon",
+    iconName: "TruckIcon",
     tag: "Pesados & Máquinas",
   },
 ];
@@ -267,7 +298,8 @@ export const FAQ_DATA: FaqItem[] = [
   },
   {
     id: "faq-6",
-    question: "Quais formas de pagamento são aceitas e como funciona a garantia?",
+    question:
+      "Quais formas de pagamento são aceitas e como funciona a garantia?",
     answer:
       "Aceitamos cartões de crédito (com parcelamento), débito, PIX e opções de faturamento para pessoas jurídicas sob consulta prévia. Todos os serviços contam com emissão de nota fiscal e termo de garantia.",
   },

@@ -6,7 +6,8 @@ import { Container } from "../components/ui/Container";
 import { SITE_CONFIG } from "../data/content";
 import { requestWhatsAppTriage } from "../lib/whatsappTriageEvents";
 import { RotatingText } from "../components/ui/react-bits/RotatingText";
-import heroBg from "../assets/scania-super-ilustrativa.jpg";
+import { Logo } from "../components/Logo";
+import heroBg from "../assets/foto_perfil.jpg";
 
 export const Hero: React.FC = () => {
   const handleWhatsApp = () => {
@@ -39,7 +40,6 @@ export const Hero: React.FC = () => {
       id="inicio"
       className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-[#090A0C]"
     >
-      {/* Background Graphic & High-Res Diesel Automotive Imagery */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src={heroBg}
@@ -48,49 +48,53 @@ export const Hero: React.FC = () => {
           loading="eager"
         />
 
-        {/* Cinematic Gradient Overlays for Readability & High Contrast */}
-        {/* Horizontal readability mask (darker on left text area, fading out to reveal the truck on the right) */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#090A0C] via-[#090A0C]/85 via-40% md:via-50% to-[#090A0C]/20" />
-        {/* Top/Bottom seamless integration gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#090A0C]/80 via-transparent via-25% to-[#090A0C]" />
 
-        {/* Subtle Cool Blue & Cyan Glow Accents */}
         <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#1473E6]/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 right-1/4 w-[450px] h-[450px] bg-[#1473E6]/20 rounded-full blur-[130px] pointer-events-none" />
       </div>
 
       <Container className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Main Hero Content */}
+        <div className="flex justify-start">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-8 xl:col-span-7 flex flex-col items-start text-left"
+            className="flex w-full max-w-4xl flex-col items-start text-left"
           >
-            {/* Headline */}
+            <motion.div
+              variants={itemVariants}
+              className="mb-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4"
+            >
+              <Logo size="sm" />
+              <span className="h-px w-8 bg-[#1473E6]/70 sm:h-8 sm:w-px" />
+              <span className="text-xs font-semibold tracking-wide text-[#CBD5E1] sm:text-sm">
+                Tecnologia &amp; precisão diesel
+              </span>
+            </motion.div>
+
             <motion.h1
               variants={itemVariants}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] text-[#93c5fd] font-extrabold tracking-tight leading-[1.08] mb-6 font-heading drop-shadow-md w-full"
+              className="mb-6 flex h-[4.1rem] w-full items-center justify-start text-3xl font-extrabold leading-[1.08] text-[#93c5fd] drop-shadow-md sm:h-[6.5rem] sm:text-5xl md:h-[8.2rem] md:text-6xl lg:h-[9.1rem] lg:text-[4.2rem]"
             >
               <RotatingText
                 items={[
-                  { word: "MANUTENÇÃO", highlight: "AVANÇADA." },
-                  { word: "REPARAÇÃO", highlight: "AVANÇADA." },
-                  { word: "DIAGNÓSTICO", highlight: "AVANÇADO." },
+                  { word: "DIAGNÓSTICO", highlight: "PRECISO." },
+                  { word: "MANUTENÇÃO", highlight: "PREVENTIVA." },
+                  { word: "REPARO", highlight: "ESPECIALIZADO." },
                 ]}
-                rotationInterval={2800}
+                rotationInterval={5100}
                 auto
                 loop
               />
             </motion.h1>
 
-            {/* Subheadline */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-[#CBD5E1] max-w-2xl leading-relaxed mb-8 font-sans font-normal drop-shadow-sm"
+              className="mb-8 max-w-2xl text-lg font-normal leading-relaxed text-[#CBD5E1] drop-shadow-sm sm:text-xl"
             >
               Tecnologia e precisão técnica para{" "}
               <strong className="text-white font-semibold">
@@ -103,10 +107,9 @@ export const Hero: React.FC = () => {
               , garantindo máxima disponibilidade e confiabilidade.
             </motion.p>
 
-            {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+              className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center"
             >
               <Button
                 onPress={handleWhatsApp}
@@ -131,14 +134,13 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Hero Trust & Meta Strip */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-14 sm:mt-18 pt-6 border-t border-[#292C31]/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm text-[#A7A9AD]"
+          className="mt-14 flex flex-col items-start gap-4 border-t border-[#292C31]/60 pt-6 text-left text-sm text-[#A7A9AD] sm:mt-18 md:flex-row md:items-center md:justify-between"
         >
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+          <div className="flex flex-wrap items-center justify-start gap-6 sm:gap-8">
             <div className="flex items-center gap-2 text-xs sm:text-sm">
               <DynamicIcon
                 name="ShieldCheckIcon"
