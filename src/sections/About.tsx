@@ -5,9 +5,9 @@ import { DynamicIcon } from "../components/DynamicIcon";
 import ArlaServiceImage from "../assets/foto_perfil.jpg";
 
 const ABOUT_CHECKLIST = [
-  "Diagnóstico computadorizado para linha diesel",
+  "Softwares de montadora para diagnóstico preciso",
   "Especialização em sistemas Euro 5 e Euro 6",
-  "Reparação de Pick-Ups, Caminhões e Máquinas",
+  "Caminhões, Pick-Ups, Ônibus, Máquinas e Vans",
   "Orçamento detalhado, claro e com garantia",
 ];
 
@@ -69,14 +69,17 @@ export const About: React.FC = () => {
                 e precisão técnica para veículos e máquinas a diesel.
               </p>
               <p>
-                Com profundo domínio em motores diesel modernos, injeção common
-                rail e sistemas de pós-tratamento de emissões{" "}
+                Contamos com{" "}
+                <strong className="text-white font-semibold">
+                  todos os softwares de montadora
+                </strong>{" "}
+                para o diagnóstico completo do seu veículo (caminhão, pick-up,
+                ônibus, máquinas e vans), aliados ao domínio profundo em injeção
+                common rail e sistemas{" "}
                 <strong className="text-white font-semibold">
                   Euro 5 e Euro 6
                 </strong>
-                , nossa oficina combina diagnóstico computadorizado de última
-                geração com rigor mecânico para entregar a máxima confiabilidade
-                ao seu veículo ou frota.
+                .
               </p>
             </div>
 

@@ -39,9 +39,10 @@ export const CtaFinal: React.FC = () => {
                 </h2>
 
                 <p className="text-[#A7A9AD] text-base sm:text-lg max-w-xl">
-                  Fale com nossos especialistas pelo WhatsApp. Diagnóstico
-                  avançado, precisão técnica e a agilidade que sua operação a
-                  diesel necessita.
+                  Fale com nossos especialistas pelo WhatsApp. Temos todos os
+                  softwares de montadora para diagnóstico do seu caminhão,
+                  pick-up, ônibus, máquinas e vans, garantindo precisão e máxima
+                  agilidade.
                 </p>
               </div>
 

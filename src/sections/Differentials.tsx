@@ -64,9 +64,10 @@ export const Differentials: React.FC = () => {
                 Por que confiar na ARLA Service?
               </h2>
               <p className="text-[#A7A9AD] text-base leading-relaxed mb-8">
-                Unimos conhecimento especializado em engenharia diesel a
-                scanners e ferramentas de precisão, oferecendo diagnósticos
-                exatos e soluções definitivas para o seu veículo ou operação.
+                Temos todos os softwares de montadora para diagnóstico exato em
+                caminhões, pick-ups, ônibus, máquinas e vans, combinados com
+                profundo conhecimento em engenharia diesel para soluções
+                definitivas.
               </p>
             </div>
 

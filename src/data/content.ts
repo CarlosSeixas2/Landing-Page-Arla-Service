@@ -55,7 +55,7 @@ export interface GalleryItem {
 export const SITE_CONFIG = {
   name: "ARLA Service",
   tagline:
-    "Oficina Especializada em Linha Diesel, Euro 5/6, Pick-Ups e Caminhões",
+    "Oficina Especializada em Linha Diesel • Softwares de Montadora para Caminhões, Pick-Ups, Ônibus, Máquinas e Vans",
   city: "Parnaíba - PI",
   address: "Parnaíba - PI",
   googleMapsUrl:
@@ -125,9 +125,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "diagnostic",
     title: "Diagnóstico Avançado",
     description:
-      "Varredura computadorizada com scanners dedicados para linha diesel. Leitura precisa de parâmetros de injeção, sensores e falhas em tempo real.",
+      "Temos todos os softwares de montadora para o diagnóstico do seu veículo: caminhão, pick-up, ônibus, máquinas e vans.",
     iconName: "CpuIcon",
-    tag: "Scanner Dedicado",
+    tag: "Software de Montadora",
   },
   {
     id: "mechanics",
@@ -175,7 +175,7 @@ export const DIFFERENTIALS_DATA: DifferentialItem[] = [
     number: "02",
     title: "Diagnóstico Eletrônico Avançado",
     description:
-      "Scanners dedicados para linha diesel para identificar a causa raiz do problema com rapidez, exatidão e sem tentativas desnecessárias.",
+      "Temos todos os softwares de montadora para o diagnóstico do seu veículo: caminhão, pick-up, ônibus, máquinas e vans.",
     iconName: "CpuIcon",
   },
   {
@@ -282,7 +282,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: "faq-3",
     question: "Como funciona o diagnóstico eletrônico avançado?",
     answer:
-      "Utilizamos scanners industriais e automotivos dedicados para linha diesel. O equipamento se comunica diretamente com a central eletrônica (ECU) para identificar falhas intermitentes, parâmetros de injeção, sensores e atuadores com extrema precisão.",
+      "Temos todos os softwares de montadora para o diagnóstico do seu veículo: caminhão, pick-up, ônibus, máquinas e vans. Nosso equipamento se comunica diretamente com a central eletrônica (ECU) para identificar falhas intermitentes, parâmetros de injeção, sensores e atuadores com extrema precisão.",
   },
   {
     id: "faq-4",

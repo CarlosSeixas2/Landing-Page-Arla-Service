@@ -96,15 +96,15 @@ export const Hero: React.FC = () => {
               variants={itemVariants}
               className="mb-8 max-w-2xl text-lg font-normal leading-relaxed text-[#CBD5E1] drop-shadow-sm sm:text-xl"
             >
-              Tecnologia e precisão técnica para{" "}
+              Softwares de montadora para diagnóstico de ponta em{" "}
               <strong className="text-white font-semibold">
-                Pick-Ups, Caminhões e Máquinas
+                Caminhões, Pick-Ups, Ônibus, Máquinas e Vans
               </strong>
               . Especialistas em sistemas{" "}
               <strong className="text-[#93c5fd] font-semibold">
                 Euro 5 e Euro 6
               </strong>
-              , garantindo máxima disponibilidade e confiabilidade.
+              , garantindo máxima confiabilidade.
             </motion.p>
 
             <motion.div
@@ -161,7 +161,7 @@ export const Hero: React.FC = () => {
                 className="text-[#1473E6]"
               />
               <span className="font-semibold text-white">
-                Diagnóstico Eletrônico Dedicado
+                Softwares de Montadora Dedicados
               </span>
             </div>
 

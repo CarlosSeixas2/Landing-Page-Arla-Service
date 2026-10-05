@@ -23,7 +23,7 @@ export const Services: React.FC = () => {
         <SectionTitle
           badge="NOSSOS SERVIÇOS"
           title="Soluções Técnicas em Diesel."
-          description="Manutenção, reparação mecânica e diagnóstico eletrônico avançado para pick-ups, caminhões, máquinas e sistemas Euro 5 e Euro 6."
+          description="Softwares de montadora para diagnóstico completo, manutenção e reparação mecânica em caminhões, pick-ups, ônibus, máquinas, vans e sistemas Euro 5 e Euro 6."
           layout="split"
         />
 

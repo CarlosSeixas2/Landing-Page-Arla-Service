@@ -8,7 +8,7 @@ import {
   HowWeWork,
   Location,
   Services,
-  Testimonials,
+  // Testimonials,
 } from "./sections";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { WhatsAppTriage } from "./components/WhatsAppTriage";
@@ -29,7 +29,7 @@ function App() {
         <About />
         <Gallery />
         <HowWeWork />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Faq />
         <Location />
         <CtaFinal />
