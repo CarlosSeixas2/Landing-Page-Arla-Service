@@ -46,17 +46,39 @@ export const Footer: React.FC = () => {
           </nav>
 
           {/* Socials & Location */}
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 text-xs text-[#A7A9AD]">
-              <DynamicIcon
-                name="Location01Icon"
-                size={16}
-                className="text-[#1473E6]"
-              />
-              <span>{SITE_CONFIG.city}</span>
+          <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-[#A7A9AD]">
+              <div className="flex items-center gap-1.5">
+                <DynamicIcon
+                  name="Location01Icon"
+                  size={16}
+                  className="text-[#1473E6]"
+                />
+                <span>{SITE_CONFIG.city}</span>
+              </div>
+
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                className="flex items-center gap-1.5 text-[#A7A9AD] hover:text-white transition-colors duration-200"
+              >
+                <DynamicIcon
+                  name="Mail01Icon"
+                  size={16}
+                  className="text-[#1473E6]"
+                />
+                <span>{SITE_CONFIG.email}</span>
+              </a>
             </div>
 
             <div className="flex items-center gap-3">
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                className="w-9 h-9 rounded-full bg-[#111316] border border-[#292C31] hover:border-[#1473E6] flex items-center justify-center text-[#A7A9AD] hover:text-white transition-all duration-200"
+                aria-label="Email"
+              >
+                <DynamicIcon name="Mail01Icon" size={18} />
+              </a>
+
               <a
                 href={SITE_CONFIG.instagramUrl}
                 target="_blank"

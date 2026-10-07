@@ -57,10 +57,21 @@ export const SITE_CONFIG = {
   tagline:
     "Oficina Especializada em Linha Diesel • Softwares de Montadora para Caminhões, Pick-Ups, Ônibus, Máquinas e Vans",
   city: "Parnaíba - PI",
-  address: "Parnaíba - PI",
+  address: "Av. Evandro Lins e Silva",
+  neighborhood: "Bairro Primavera",
+  cep: "64.213-210",
+  email: "arlaservicephb@gmail.com",
+  coordinates: {
+    lat: -2.96476,
+    lng: -41.7620,
+  },
+  entranceCoordinates: {
+    lat: -2.9650705,
+    lng: -41.7597557,
+  },
   googleMapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Arla+Service%2C+Parna%C3%ADba%2C+PI",
-  whatsappNumber: "558699353299",
+    "https://www.google.com/maps/search/?api=1&query=-2.9650705%2C-41.7597557",
+  whatsappNumber: "86995469234",
   whatsappMessage:
     "Olá! Gostaria de agendar uma avaliação técnica na ARLA Service.",
   instagramUrl: "https://www.instagram.com/arla_service/",

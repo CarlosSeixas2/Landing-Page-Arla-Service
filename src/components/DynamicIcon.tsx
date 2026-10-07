@@ -40,6 +40,7 @@ import {
   InstagramIcon,
   TelephoneIcon,
   DeliveryTruck02Icon,
+  Mail01Icon,
 } from "@hugeicons/core-free-icons";
 
 const ICON_MAP: Record<string, any> = {
@@ -82,6 +83,7 @@ const ICON_MAP: Record<string, any> = {
   InstagramIcon,
   TelephoneIcon,
   DeliveryTruck02Icon,
+  Mail01Icon,
 };
 
 interface DynamicIconProps {
